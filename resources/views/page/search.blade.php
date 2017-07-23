@@ -1,6 +1,6 @@
 @extends('master')
 @section('content')
-<div class="container">
+<div class="container" ng-controller="SanPhamController">
 		<div id="content" class="space-top-none">
 			<div class="main-content">
 				<div class="space60">&nbsp;</div>
@@ -9,26 +9,22 @@
 						<div class="beta-products-list">
 							<h4>Tìm kiếm</h4>
 							<div class="beta-products-details">
-								<p class="pull-left">Tìm thấy {{count($product)}} sản phẩm</p>
 								<div class="clearfix"></div>
 							</div>
 
 							<div class="row">
-							@foreach($product as $new)
-								<div class="col-sm-3">
+
+								<div class="col-sm-3" ng-repeat="x in sanphams">
 									<div class="single-item">
 										<div class="single-item-header">
-											<a href="{{route('chitietsanpham',$new->id)}}"><img src="source/image/product/{{$new->image}}" height="250px" alt=""></a>
+											<a href=""><img src="source/image/product/<% x.image %>" height="250px" alt=""></a>
 										</div>
 										<div class="single-item-body">
-											<p class="single-item-title">{{$new->name}}</p>
+											<p class="single-item-title"><% x.name%></p>
 											<p class="single-item-price" style="font-size: 18px">
-											@if($new->promotion_price ==0)
-											<span class="flash-sale">{{number_format($new->unit_price)}} đồng</span>
-											@else
-												<span class="flash-del">{{number_format($new->unit_price)}} đồng</span>
-												<span class="flash-sale">{{number_format($new->promotion_price)}} đồng</span>
-											@endif
+
+											<span class="flash-sale"><% x.unit_price %> đồng</span>
+
 											</p>
 										</div>
 										<div class="single-item-caption">
@@ -38,7 +34,7 @@
 										</div>
 									</div>
 								</div>
-							@endforeach
+
 							</div>
 							
 						</div> <!-- .beta-products-list -->

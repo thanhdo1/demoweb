@@ -1,16 +1,6 @@
-var app = angular.module('my-app',[]).constant('API', 'http://localhost:8080/demos/public/')
-.config(function($routeProvider) {
-	$routeProvider
-	.when('/gioithieu', {
-		templateUrl: 'page/gioithieu.php',
-		
-	})
-	.when('/lienhe', {
-		templateUrl: 'page/lienhe.php',
-		
-	})
-	
-	.otherwise({
-		templateUrl: 'page/404.html'
-	})
-})
+
+/*var app = angular.module('myApp',[]).constant('API','http://localhost/demos/public/');*/
+var app = angular.module('myApp', [], function($interpolateProvider) {
+    $interpolateProvider.startSymbol('<%');
+    $interpolateProvider.endSymbol('%>');
+});

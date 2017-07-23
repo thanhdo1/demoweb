@@ -1,5 +1,5 @@
-@extends('master')
-@section("content")
+@extends('...master')
+@section('content')
 <div class="inner-header">
 		<div class="container">
 			<div class="pull-left">
@@ -7,7 +7,7 @@
 			</div>
 			<div class="pull-right">
 				<div class="beta-breadcrumb font-large">
-					<a href="{{route('trang-chu')}}">Home</a> / <span>Liên hệ</span>
+					<a href="">Home</a> / <span>Liên hệ</span>
 				</div>
 			</div>
 			<div class="clearfix"></div>
@@ -46,4 +46,4 @@
 			</div>
 		</div> <!-- #content -->
 	</div> <!-- .container -->
-	@endsection
+@endsection
